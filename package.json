@@ -20,6 +20,7 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron-forge/plugin-vite": "^7.4.0",
+    "@electron-forge/publisher-github": "^7.4.0",
     "@electron/fuses": "^1.8.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
@@ -39,9 +40,11 @@
   "license": "MIT",
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
+    "dotenv": "^16.4.5",
     "electron-squirrel-startup": "^1.0.1",
     "jimp": "^0.22.12",
     "pcsclite": "^1.0.1",
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "update-electron-app": "^3.0.0"
   }
 }
