@@ -17,7 +17,7 @@ updateElectronApp({
         repo: 'dev-uros/citac-licne-karte-rs',
         host: 'https://github.com'
     },
-    updateInterval: '1 hour',
+    updateInterval: '5 minutes',
 })
 const createWindow = () => {
     // Create the browser window.
