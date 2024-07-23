@@ -1450,13 +1450,9 @@ async function printPdf() {
         await printWindow.loadURL(pdfDataUrl);
 
 
+        await printWindow.webContents.executeJavaScript('setTimeout(()=>{ window.close() },30000)')
         await printWindow.webContents.executeJavaScript('window.print();');
 
-        setTimeout(()=>{
-            if(printWindow){
-                printWindow.destroy()
-            }
-        }, 60000)
 
     } catch (error) {
         console.error('Failed to load URL:', error);
