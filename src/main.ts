@@ -6,7 +6,6 @@ import fontkit from '@pdf-lib/fontkit';
 import Jimp from "jimp";
 import * as fs from "fs";
 import {updateElectronApp, UpdateSourceType} from 'update-electron-app';
-import * as process from "process";
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
     app.quit();
@@ -15,10 +14,10 @@ if (require('electron-squirrel-startup')) {
 updateElectronApp({
     updateSource: {
         type: UpdateSourceType.ElectronPublicUpdateService,
-        repo: 'dev-uros/citac-licne-karte-rs'
+        repo: 'dev-uros/citac-licne-karte-rs',
+        host: 'https://github.com'
     },
     updateInterval: '1 hour',
-    logger: require('electron-log')
 })
 const createWindow = () => {
     // Create the browser window.
