@@ -18,7 +18,9 @@ const config: ForgeConfig = {
                 name: 'citac-licne-karte-rs',
                 owner: 'dev-uros'
             },
+            authToken: process.env.GITHUB_TOKEN,
             prerelease: false,
+            draft: false
         })
     ],
     packagerConfig: {
