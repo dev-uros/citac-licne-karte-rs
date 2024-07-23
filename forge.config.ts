@@ -8,22 +8,18 @@ import {FusesPlugin} from '@electron-forge/plugin-fuses';
 import {FuseV1Options, FuseVersion} from '@electron/fuses';
 import * as dotenv from 'dotenv';
 import * as process from "process";
+import PublisherGithub from "@electron-forge/publisher-github";
 dotenv.config();
 
 const config: ForgeConfig = {
     publishers: [
-        {
-            name: '@electron-forge/publisher-github',
-            config: {
-                repository: {
-                    owner: 'dev-uros',
-                    name: 'citac-licne-karte-rs'
-                },
-                prerelease: true,
-                force: true,
-                authToken: process.env.GITHUB_TOKEN
-            }
-        }
+        new PublisherGithub({
+            repository: {
+                name: 'citac-licne-karte-rs',
+                owner: 'dev-uros'
+            },
+            prerelease: false,
+        })
     ],
     packagerConfig: {
         asar: true,
