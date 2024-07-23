@@ -5,20 +5,13 @@ import {PDFDocument} from 'pdf-lib'
 import fontkit from '@pdf-lib/fontkit';
 import Jimp from "jimp";
 import * as fs from "fs";
-import {updateElectronApp, UpdateSourceType} from 'update-electron-app';
+import {updateElectronApp} from 'update-electron-app';
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
     app.quit();
 }
 
-updateElectronApp({
-    updateSource: {
-        type: UpdateSourceType.ElectronPublicUpdateService,
-        repo: 'dev-uros/citac-licne-karte-rs',
-        host: 'https://github.com'
-    },
-    updateInterval: '5 minutes',
-})
+updateElectronApp()
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({

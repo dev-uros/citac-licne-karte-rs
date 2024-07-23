@@ -4,6 +4,10 @@
   "version": "1.0.9",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-uros/citac-licne-karte-rs"
+  },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
