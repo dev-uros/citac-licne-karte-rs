@@ -36,7 +36,7 @@ jobs:
         shell: bash
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run Electron Forge Publish
         run: npm run publish
