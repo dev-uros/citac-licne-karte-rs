@@ -14,7 +14,10 @@ const config: ForgeConfig = {
         name: 'CitacLicneKarte'
     },
     rebuildConfig: {},
-    makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+    makers: [new MakerSquirrel({
+        authors: 'Suprabit',
+        description: 'Serbian ID card reader'
+    }), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
     plugins: [
         {
             name: '@electron-forge/plugin-auto-unpack-natives',
