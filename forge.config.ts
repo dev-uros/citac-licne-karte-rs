@@ -19,13 +19,12 @@ const config: ForgeConfig = {
                 owner: 'dev-uros'
             },
             authToken: process.env.GITHUB_TOKEN,
-            prerelease: false,
-            draft: false
+            prerelease: true,
         })
     ],
     packagerConfig: {
         asar: true,
-        icon: './public/icons/icon-mac',
+        icon: './public/icons/icon',
         name: 'CitacLicneKarte'
     },
     rebuildConfig: {},
