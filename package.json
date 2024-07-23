@@ -1,7 +1,7 @@
 {
   "name": "id-card-reader",
   "productName": "id-card-reader",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "repository": {
