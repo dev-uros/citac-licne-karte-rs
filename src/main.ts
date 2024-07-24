@@ -5,13 +5,22 @@ import {PDFDocument} from 'pdf-lib'
 import fontkit from '@pdf-lib/fontkit';
 import Jimp from "jimp";
 import * as fs from "fs";
-import {updateElectronApp} from 'update-electron-app';
+import {updateElectronApp, UpdateSourceType} from 'update-electron-app';
+import log from 'electron-log/main';
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
     app.quit();
 }
-
-updateElectronApp()
+log.info('logujem se negde')
+updateElectronApp({
+    updateSource: {
+        type: UpdateSourceType.ElectronPublicUpdateService,
+        repo: 'dev-uros/citac-licne-karte-rs',
+        host: 'https://github.com'
+    },
+    updateInterval: '1 hour',
+    logger: log
+})
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
@@ -109,6 +118,7 @@ let cardReader;
 
 const initializeIDCardReader = async (browserWindow: BrowserWindow) => {
 
+    log.info('ulazim u citanje kartice')
     pcsc = await pcsclite()
 
 
@@ -276,7 +286,7 @@ const initializeIDCardReader = async (browserWindow: BrowserWindow) => {
 
                                 try {
                                     allData.pdfBase64 = uint8ArrayToBase64(allData.pdf);
-                                }catch (e) {
+                                } catch (e) {
                                     browserWindow.webContents.send('display-error');
                                     reader.close()
                                     pcsc.close()

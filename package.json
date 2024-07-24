@@ -1,7 +1,7 @@
 {
   "name": "id-card-reader",
   "productName": "id-card-reader",
-  "version": "1.0.14",
+  "version": "1.0.17",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "repository": {
@@ -45,6 +45,7 @@
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
     "dotenv": "^16.4.5",
+    "electron-log": "^5.1.7",
     "electron-squirrel-startup": "^1.0.1",
     "jimp": "^0.22.12",
     "pcsclite": "^1.0.1",
